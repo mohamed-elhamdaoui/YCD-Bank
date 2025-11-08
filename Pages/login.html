@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <main class="h-screen bg-white-200 absolute inset-0 flex justify-center items-center">
+        <div class="border-1 w-[70%] h-[75%] rounded-3xl shadow-lg shadow-black/35 grid grid grid-cols-2">
+            <section
+                class="rounded-3xl rounded-r-[95px] bg-sky-600 text-white flex flex-col items-center justify-center  gap-3">
+                <h1 class="text-3xl font-bold">Hello, Welcome!</h1>
+                <p class="text-base">Don't have an account ?</p>
+                <button class="border-2 rounded-lg px-11 py-2 font-medium hover:bg-white hover:text-sky-600">Register</button>
+            </section>
+
+            <section class="flex flex-col items-center gap-7">
+
+                <h1 class="text-3xl font-bold">Login</h1>
+
+                <div class="relative w-[80%]">
+                    <input
+                        class="border-2 pl-3 py-2 pr-10 bg-gray-200 rounded-lg  w-full focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:font-medium hover:bg-gray-100 transition-colors duration-200"
+                        type="text" placeholder="Username">
+                    <span class="absolute right-5 inset-y-0 flex items-center text-gray-400 "><i
+                            class="fa-solid fa-user"></i> </span>
+                </div>
+
+                <div class="relative w-[80%]">
+                    <input
+                        class="border-2 pl-3 py-2 pr-10 bg-gray-200 rounded-lg  w-full focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:font-medium hover:bg-gray-100 transition-colors duration-200"
+                        type="text" placeholder="Username">
+                    <span class="absolute right-5 inset-y-0 flex items-center text-gray-400 "><i
+                            class="fa-solid fa-user"></i> </span>
+                </div>
+
+                <p class="text-gray-600 text-sm hover:text-blue-500 cursor-pointer">Forgot password ?</p>
+                <button class="bg-blue-400 text-white w-[80%] py-2 rounded-lg font-bold hover:bg-blue-500">Login</button>
+                <p>or login with social platforms</p>
+            </section>
+
+        </div>
+    </main>
+    <script src="/assets/js/main.js"></script>
+</body>
+
+</html>
