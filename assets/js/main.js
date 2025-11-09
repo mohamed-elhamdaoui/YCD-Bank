@@ -86,22 +86,29 @@ const save_register = document.getElementById("save_register");
 
 save_register.addEventListener("click", () => {
 
-    let regUsername = register_username.value;
-    let regPassword = register_password.value;
-    let regEmail = register_email.value;
+    let regUsername = register_username.value.trim();
+    let regPassword = register_password.value.trim();
+    let regEmail = register_email.value.trim();
 
-    console.log(regUsername)
-    console.log(regPassword)
-    console.log(regEmail)
+    // console.log(regUsername) ;
+    // console.log(regPassword) ;
+    // console.log(regEmail) ;
 
-    let arr = localStorage.getItem("register");
+
+    let arr = localStorage.getItem("register"); 
 
     if (arr === null) {
         arr = [];
     } else {
-        arr = JSON.parse(arr)
+        arr = JSON.parse(arr) ;
     }
-    console.log(arr)
+    // console.log(arr)
+
+   const userExist = arr.some(user => user.regUsername === regUsername || user.regEmail === regEmail)  
+    if (userExist) {
+        alert("Username or email already exists! Please choose another.");
+        return ;
+    }
 
     let obj = {
         regUsername: regUsername,
@@ -112,12 +119,12 @@ save_register.addEventListener("click", () => {
     arr.push(obj);
     localStorage.setItem("register", JSON.stringify(arr))
     console.log(arr)
-    
+
 
     isRegistre = !isRegistre;
 
     localStorage.setItem("isRegistre", JSON.stringify(isRegistre))
-    updateUi() ;
+    updateUi();
 
     register_username.value = "";
     register_password.value = "";
@@ -128,6 +135,13 @@ save_register.addEventListener("click", () => {
 
 
 })
+
+
+const arr =JSON.parse(localStorage.getItem("register"))  ;
+console.log(arr)
+
+
+
 
 // console.log(localStorage.getItem("register"))
 // console.log(JSON.parse(localStorage.getItem("isRegister")))
