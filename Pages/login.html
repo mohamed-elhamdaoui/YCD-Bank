@@ -2,51 +2,106 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
-    <main class="h-screen bg-white-200 absolute inset-0 flex justify-center items-center bg-[linear-gradient(90deg,#e2e2e2,#c9d6ff)]">
-        <div class="border-1 w-[70%] h-[75%] rounded-3xl shadow-lg shadow-black/35 grid grid grid-cols-2 bg-white">
+    <main
+        class="h-screen absolute inset-0 flex justify-center items-center bg-[linear-gradient(90deg,#e2e2e2,#c9d6ff)]">
+
+        <div
+            class="border-1 w-[90%] md:w-[70%] h-[85%] rounded-3xl shadow-lg shadow-black/35 grid grid-rows-[auto,1fr] md:grid-rows-1 md:grid-cols-2 bg-white overflow-hidden relative">
+
+            <!-- LEFT BLUE PANEL -->
             <section
-                class="rounded-3xl rounded-r-[95px] bg-sky-600 text-white flex flex-col items-center justify-center  gap-3">
-                <h1 class="text-3xl font-bold">Hello, Welcome!</h1>
-                <p class="text-base">Don't have an account ?</p>
-                <button class="border-2 rounded-lg px-11 py-2 font-medium hover:bg-white hover:text-sky-600">Register</button>
+                class="rounded-t-3xl  md:rounded-l-3xl md:rounded-r-[95px] bg-sky-600 text-white flex flex-col items-center justify-center gap-3 py-6 md:py-8 min-h-[180px] md:min-h-0">
+                <h1 id="leftTitle" class="text-2xl md:text-3xl font-bold">Hello, Welcome!</h1>
+                <p id="leftText" class="text-sm md:text-base">Don't have an account?</p>
+                <button id="toggleForm"
+                    class="border-2 rounded-lg px-8 py-2 font-medium hover:bg-white hover:text-sky-600 text-sm md:text-base">
+                    Register
+                </button>
             </section>
 
-            <section class="flex flex-col items-center gap-7">
 
-                <h1 class="text-3xl font-bold">Login</h1>
+            <!-- RIGHT PANEL -->
+            <div class="flex justify-center items-center relative p-4">
 
-                <div class="relative w-[80%]">
-                    <input
-                        class="border-2 pl-3 py-2 pr-10 bg-gray-200 rounded-lg  w-full focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:font-medium hover:bg-gray-100 transition-colors duration-200"
-                        type="text" placeholder="Username">
-                    <span class="absolute right-5 inset-y-0 flex items-center text-gray-400 "><i
-                            class="fa-solid fa-user"></i> </span>
-                </div>
+                <!-- LOGIN FORM -->
+                <section id="loginForm" class=" flex flex-col items-center gap-8 w-full transition-all duration-700">
+                    <h1 class="text-3xl font-bold">Login</h1>
 
-                <div class="relative w-[80%]">
-                    <input
-                        class="border-2 pl-3 py-2 pr-10 bg-gray-200 rounded-lg  w-full focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:font-medium hover:bg-gray-100 transition-colors duration-200"
-                        type="text" placeholder="Username">
-                    <span class="absolute right-5 inset-y-0 flex items-center text-gray-400 "><i
-                            class="fa-solid fa-user"></i> </span>
-                </div>
+                    <div class="relative w-[90%] md:w-[80%]">
+                        <input id="login_username"
+                            class="border-2 pl-3 py-2 pr-10 bg-gray-200 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:font-medium hover:bg-gray-100 transition-colors duration-200"
+                            type="text" placeholder="Username">
+                        <span class="absolute right-5 inset-y-0 flex items-center text-gray-400"><i
+                                class="fa-solid fa-user"></i></span>
+                    </div>
 
-                <p class="text-gray-600 text-sm hover:text-blue-500 cursor-pointer">Forgot password ?</p>
-                <button class="bg-blue-400 text-white w-[80%] py-2 rounded-lg font-bold hover:bg-blue-500">Login</button>
-                <p>or login with social platforms</p>
-            </section>
+                    <div class="relative w-[90%] md:w-[80%]">
+                        <input id="login_password"
+                            class="border-2 pl-3 py-2 pr-10 bg-gray-200 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:font-medium hover:bg-gray-100 transition-colors duration-200"
+                            type="password" placeholder="Password">
+                        <span class="absolute right-5 inset-y-0 flex items-center text-gray-400"><i
+                                class="fa-solid fa-lock"></i></span>
+                    </div>
 
+                    <p class="text-gray-600 text-sm hover:text-blue-500 cursor-pointer">Forgot password?</p>
+                    <button id="save_login"
+                        class="bg-blue-400 text-white w-[90%] md:w-[80%] py-2 rounded-lg font-bold hover:bg-blue-500">Login</button>
+                    <p class="text-gray-600 text-xs md:text-sm">or login with social platforms</p>
+                </section>
+
+
+                <!-- REGISTER FORM -->
+                <section id="registerForm"
+                    class="hidden absolute inset-0 flex flex-col items-center justify-center gap-8 w-full bg-white transition-all duration-700">
+                    <h1 class="text-3xl font-bold">Registration</h1>
+
+                    <div class="relative w-[90%] md:w-[80%]">
+                        <input id="register_username"
+                            class="border-2 pl-3 py-2 pr-10 bg-gray-200 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:font-medium hover:bg-gray-100 transition-colors duration-200"
+                            type="text" placeholder="Username">
+                        <span class="absolute right-5 inset-y-0 flex items-center text-gray-400"><i
+                                class="fa-solid fa-user"></i></span>
+                    </div>
+
+                    <div class="relative w-[90%] md:w-[80%]">
+                        <input id="register_password"
+                            class="border-2 pl-3 py-2 pr-10 bg-gray-200 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:font-medium hover:bg-gray-100 transition-colors duration-200"
+                            type="password" placeholder="Password">
+                        <span class="absolute right-5 inset-y-0 flex items-center text-gray-400"><i
+                                class="fa-solid fa-lock"></i></span>
+                    </div>
+
+                    <div class="relative w-[90%] md:w-[80%]">
+                        <input id="register_email"
+                            class="border-2 pl-3 py-2 pr-10 bg-gray-200 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:font-medium hover:bg-gray-100 transition-colors duration-200"
+                            type="email" placeholder="Email" required>
+                        <span class="absolute right-5 inset-y-0 flex items-center text-gray-400"><i
+                                class="fa-solid fa-envelope"></i></span>
+                    </div>
+
+                    <button id="save_register"
+                        class="bg-blue-400 text-white w-[90%] md:w-[80%] py-2 rounded-lg font-bold hover:bg-blue-500">Register</button>
+                    <p class="text-gray-600 text-xs md:text-sm">or register with social platforms</p>
+                </section>
+
+
+            </div>
         </div>
     </main>
-    <script src="/assets/js/main.js"></script>
+
+    <script src="/YCD-Bank/assets/js/main.js">
+
+
+
+    </script>
 </body>
 
 </html>
