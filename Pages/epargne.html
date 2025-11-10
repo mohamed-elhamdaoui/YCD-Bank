@@ -144,29 +144,29 @@
 
             </div>
 
-            <div class="grid grid-cols-2 gap-4 mt-20">
-                <button class="flex gap-6 justify-center items-center rounded-xl bg-green-100">
-                    <div class="rounded-xl bg-green-100">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 mt-8">
+                <button id="btnExportRib"
+                    class="bg-white p-4 rounded-xl shadow hover:shadow-lg transition-all flex items-center gap-3 group">
+                    <div class="bg-blue-100 p-3 rounded-lg group-hover:bg-blue-200 transition-colors">
                         <i class='bx bx-download text-2xl text-blue-600'></i>
                     </div>
-                    <div class="">
-                        <p>exporter en pdf</p>
-                        <p>exporter en pdf</p>
+                    <div class="text-left">
+                        <p class="font-semibold text-gray-800">Exporter le RIB</p>
+                        <p class="text-sm text-gray-500">Format PDF</p>
                     </div>
-
                 </button>
-                <button class="flex gap-6 justify-center items-center rounded-xl bg-green-100">
-                    <div class="rounded-xl bg-green-100">
+                <button id="btnVirement"
+                    class="bg-white p-4 rounded-xl shadow hover:shadow-lg  flex items-center gap-3 group  ">
+                    <div class="bg-green-100 p-3 rounded-lg group-hover:bg-green-200 ">
                         <i class='bx bx-transfer text-2xl text-green-600'></i>
                     </div>
-                    <div class="">
-                        <p>Virement vers épargne</p>
-                        <p>Vers le compte principal</p>
+                    <div class="text-left">
+                        <p class="font-semibold text-gray-800">Virement vers épargne</p>
+                        <p class="text-sm text-gray-500">Depuis compte principal</p>
                     </div>
-
                 </button>
             </div>
-            <div class="rounded-2xl border-green-100 shadow-2xl p-6 sm:p-8 text-black mb-6">
+            <div class="rounded-2xl border-green-100  shadow-2xl p-6 sm:p-8 text-black mb-6">
                 <div class="justify-between items-start mb-8">
                     <h3 class="text-lg font-semibold text-gray-800 mb-4">Informations</h3>
                     <div class="bg-blue-50  border-blue-500 p-4 mb-4">
@@ -191,6 +191,20 @@
 
                 </div>
             </div>
+            <div class="  inset-0 fixed bg-black opacity-50 flex justify-center items-center flex-1 ">
+                <div class="bg-white  ">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-bold text-gray-800">Virement vers épargne</h3>
+                        <button id="closePopup" class="text-gray-400 hover:text-gray-600">
+                            <i class='bx bx-x text-3xl'></i>
+                        </button>
+                    </div>
+                    <div class="">
+
+                    </div>
+                </div>
+            </div>
+            
 
         </section>
 
@@ -218,7 +232,7 @@
                 }
             );
         });
-        
+
 
     </script>
 </body>
