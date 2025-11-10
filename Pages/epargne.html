@@ -115,7 +115,8 @@
             </div>
 
 
-            <div class="">
+            <div
+                class="bg-gradient-to-br from-green-600 to-green-400 rounded-2xl shadow-2xl p-6 sm:p-8 text-white mb-6">
                 <div class="flex justify-between items-start mb-8">
                     <div>
                         <p class="text-sm opacity-90 mb-1">Compte Épargne</p>
@@ -124,17 +125,21 @@
                             <span id="soldeMasque" class="hidden">••••••</span>
                         </h2>
                     </div>
-                    <button id="toggleSolde" class="bg-black bg-opacity-20 hover:bg-opacity-30 rounded-full p-2 ">
+                    <button id="toggleSolde"
+                        class="bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full p-2 transition-all">
                         <i class='bx bx-show text-2xl' id="eyeIcon"></i>
                     </button>
                 </div>
-                <div class="mb-8">
-                    <p class="text-sm opacity-90 mb-1">RIB Epargne </p>
-                    <span id="soldeEpargne">2308 0010 0000 2807 0032 1325</span>
+                <div class="mb-4">
+                    <p class="text-sm opacity-90 mb-2">RIB Épargne</p>
+                    <div class="bg-white bg-opacity-20 rounded-lg p-3 font-mono text-sm">
+                        <span id="ribEpargne">2308 0010 0000 2807 0032 1325</span>
+                    </div>
                 </div>
-                <div class="mb-8">
-                    <p class="text-sm opacity-90 mb-1">Numero de compte</span>
-                    <p class="text-sm opacity-90 mb-1">1234456</span>
+
+                <div>
+                    <p class="text-sm opacity-90 mb-1">Numéro de compte</p>
+                    <p class="font-mono text-lg" id="numeroCompte">2807003213</p>
                 </div>
                  
             </div>
