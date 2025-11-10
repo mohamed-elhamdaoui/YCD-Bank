@@ -86,34 +86,59 @@ const save_register = document.getElementById("save_register");
 
 save_register.addEventListener("click", () => {
 
-    let regUsername = register_username.value.trim();
-    let regPassword = register_password.value.trim();
-    let regEmail = register_email.value.trim();
+    let regUsernameInput = register_username.value.trim();
+    let regPasswordInput = register_password.value.trim();
+    let regEmailInput = register_email.value.trim();
 
     // console.log(regUsername) ;
     // console.log(regPassword) ;
     // console.log(regEmail) ;
 
+    usernameRegex = /^[a-zA-Z]{3,15}$/;
+    emailRegex = /^[A-Za-z0-9]{3,}@gmail\.com$/g;
+    passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[a-z]).{8,}$/;
 
-    let arr = localStorage.getItem("register"); 
+    console.log(regEmailInput.match(emailRegex));
+    if (!regEmailInput.match(emailRegex)) {
+        alert("Invalid email format!");
+        
+        return
+    }
+    if (!regUsernameInput.match(usernameRegex)) {
+        alert("Username must be 3–15 characters (letters, numbers)");
+        return
+    }
+    if (!regPasswordInput.match(passwordRegex)) {
+        alert(" Password must have upper/lowercase, number, and 8+ chars.!");
+        return
+    }
+
+
+
+    let arr = localStorage.getItem("register");
 
     if (arr === null) {
         arr = [];
     } else {
-        arr = JSON.parse(arr) ;
+        arr = JSON.parse(arr);
     }
     // console.log(arr)
 
-   const userExist = arr.some(user => user.regUsername === regUsername || user.regEmail === regEmail)  
+    const userExist = arr.some(user => user.regUsername === regUsernameInput || user.regEmail === regEmailInput)
     if (userExist) {
         alert("Username or email already exists! Please choose another.");
-        return ;
+        return;
     }
 
+
+
+
     let obj = {
-        regUsername: regUsername,
-        regPassword: regPassword,
-        regEmail: regEmail
+        regUsername: regUsernameInput,
+        regPassword: regPasswordInput,
+        regEmail: regEmailInput ,
+        // ribPrincipale :  ,
+        // ribEprange : 
     }
 
     arr.push(obj);
@@ -137,10 +162,9 @@ save_register.addEventListener("click", () => {
 })
 
 
-const arr =JSON.parse(localStorage.getItem("register"))  ;
+const arr = JSON.parse(localStorage.getItem("register"));
+
 console.log(arr)
-
-
 
 
 // console.log(localStorage.getItem("register"))
