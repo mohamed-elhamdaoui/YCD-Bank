@@ -101,7 +101,7 @@ save_register.addEventListener("click", () => {
     console.log(regEmailInput.match(emailRegex));
     if (!regEmailInput.match(emailRegex)) {
         alert("Invalid email format!");
-        
+
         return
     }
     if (!regUsernameInput.match(usernameRegex)) {
@@ -115,7 +115,7 @@ save_register.addEventListener("click", () => {
 
 
 
-    let arr = localStorage.getItem("register");
+    let arr = localStorage.getItem("users");
 
     if (arr === null) {
         arr = [];
@@ -131,19 +131,41 @@ save_register.addEventListener("click", () => {
     }
 
 
-
-
-    let obj = {
-        regUsername: regUsernameInput,
-        regPassword: regPasswordInput,
-        regEmail: regEmailInput ,
-        // ribPrincipale :  ,
-        // ribEprange : 
+    let ribPrefix = "786765";
+    let ribSoufix = "89";
+    let ribPrincipale;
+    let randomPart = ""
+    for (let index = 0; index < 16; index++) {
+        randomPart += Math.floor(Math.random() * 10);
+        // console.log(randomPart);
     }
 
-    arr.push(obj);
-    localStorage.setItem("register", JSON.stringify(arr))
-    console.log(arr)
+    ribPrincipale = ribPrefix + randomPart + ribSoufix;
+
+    let ribEprangePrefix = "654321";
+    let ribEprangeSoufix = "77";
+    let ribEprange;
+    let randomEprangePart = ""
+    for (let index = 0; index < 16; index++) {
+        randomEprangePart += Math.floor(Math.random() * 10);
+        // console.log(randomPart);
+    }
+
+    ribEprange = ribEprangePrefix + randomEprangePart + ribEprangeSoufix;
+    // console.log(ribPrincipale);
+
+
+    let user = {
+        username: regUsernameInput,
+        password: regPasswordInput,
+        email: regEmailInput,
+        ribPrincipale: ribPrincipale,
+        ribEpargne: ribEprange,
+    }
+
+    arr.push(user);
+    localStorage.setItem("users", JSON.stringify(arr))
+    // console.log(arr)
 
 
     isRegistre = !isRegistre;
@@ -162,13 +184,13 @@ save_register.addEventListener("click", () => {
 })
 
 
-const arr = JSON.parse(localStorage.getItem("register"));
+const arr = JSON.parse(localStorage.getItem("users"));
 
 console.log(arr)
 
-
 // console.log(localStorage.getItem("register"))
 // console.log(JSON.parse(localStorage.getItem("isRegister")))
+
 
 
 
