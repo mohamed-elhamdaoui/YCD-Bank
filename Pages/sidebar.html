@@ -108,7 +108,7 @@
                         </li>
                     </ul>
 
-                    <button type="button"
+                    <button id="deconnexion" type="button"
                         class="mt-3 w-full bg-black dark:bg-gray-700 text-white rounded-lg px-8 py-2 hover:bg-gray-800 dark:hover:bg-gray-600 transition">
                         <i class='bx bx-log-out'></i> Déconnexion
                     </button>
@@ -157,6 +157,17 @@
 
 
 
+    </script>
+    <script >
+
+        const deconnexion = document.getElementById("deconnexion") ;
+        deconnexion.addEventListener("click" , ()=> {
+            if(deconnexion) {
+                alert("You have been logout");
+            localStorage.removeItem("currentUser") ;
+            window.location = "/Pages/login.html" ;
+            }
+        })
     </script>
 </body>
 
