@@ -17,6 +17,8 @@ const loginForm = document.getElementById("loginForm");
 const leftTitle = document.getElementById("leftTitle");
 const leftText = document.getElementById("leftText");
 
+
+
 // let isRegistre = false;
 // toggleForm.addEventListener("click", () => {
 //     loginForm.classList.toggle("hidden");
@@ -142,6 +144,12 @@ save_register.addEventListener("click", () => {
 
     ribPrincipale = ribPrefix + randomPart + ribSoufix;
 
+    console.log(ribPrincipale);
+    console.log(ribPrincipale.length);
+    console.log(ribPrincipale.slice(6,12));
+
+    let id = ribPrincipale.slice(6,12) ;
+
     let ribEprangePrefix = "654321";
     let ribEprangeSoufix = "77";
     let ribEprange;
@@ -155,18 +163,28 @@ save_register.addEventListener("click", () => {
     // console.log(ribPrincipale);
 
 
+
+    
+
     let user = {
         username: regUsernameInput,
         password: regPasswordInput,
         email: regEmailInput,
-        ribPrincipale: ribPrincipale,
-        ribEpargne: ribEprange,
-        solde : 10000 
+
+
+        comptePrincipal: {
+            ribPrincipale: ribPrincipale,
+            soldePrincipal: 10000,
+        },
+        compteEprange: {
+            ribEpargne: ribEprange, 
+            soldeEpargne: 0,
+        },
+        id : id ,
     }
 
     arr.push(user);
     localStorage.setItem("users", JSON.stringify(arr))
-    // console.log(arr)
 
 
     isRegistre = !isRegistre;
@@ -210,12 +228,12 @@ save_login.addEventListener("click", () => {
     );
 
 
-// let a = document.createElement('a')
-// a.href = ""
-// setTimeout(()=>{
-//     a.click()
+    // let a = document.createElement('a')
+    // a.href = ""
+    // setTimeout(()=>{
+    //     a.click()
 
-// },500)
+    // },500)
 
 
     if (foundUser) {
@@ -227,8 +245,8 @@ save_login.addEventListener("click", () => {
 
     let currentUser = foundUser
     // console.log(currentUser.username);
-    if(currentUser) {
-    localStorage.setItem("currentUser", JSON.stringify(currentUser)) ;
+    if (currentUser) {
+        localStorage.setItem("currentUser", JSON.stringify(currentUser));
     }
 })
 
