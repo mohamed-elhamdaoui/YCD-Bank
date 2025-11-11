@@ -18,6 +18,7 @@ document.getElementById('toggleSolde').addEventListener('click', function () {
     }
 })
 document.getElementById('btnVirement').addEventListener('click', function(){
-    const popupForm= document.getElementById('')
+    const popupForm= document.getElementById('formulaire');
+    popupForm.classList.remove('hidden');
 })
  
