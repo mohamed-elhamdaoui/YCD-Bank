@@ -74,8 +74,8 @@ toggleForm.addEventListener("click", () => {
 
 
 //login
-const login_username = document.getElementById("login_username");
-const login_password = document.getElementById("login_password");
+// const login_username = document.getElementById("login_username");
+// const login_password = document.getElementById("login_password");
 //register
 const register_username = document.getElementById("register_username");
 const register_password = document.getElementById("register_password");
@@ -161,6 +161,7 @@ save_register.addEventListener("click", () => {
         email: regEmailInput,
         ribPrincipale: ribPrincipale,
         ribEpargne: ribEprange,
+        solde : 10000 
     }
 
     arr.push(user);
@@ -191,8 +192,49 @@ console.log(arr)
 // console.log(localStorage.getItem("register"))
 // console.log(JSON.parse(localStorage.getItem("isRegister")))
 
+const login_username = document.getElementById("login_username");
+const login_password = document.getElementById("login_password");
 
 
+const save_login = document.getElementById("save_login");
+save_login.addEventListener("click", () => {
+
+    let loginUserInput = login_username.value.trim()
+    let loginPassInput = login_password.value.trim()
+    const users = JSON.parse(localStorage.getItem("users"));
+    console.log(users);
+
+    let foundUser = users.find(element =>
+        element.username === loginUserInput && element.password === loginPassInput
+
+    );
+
+
+// let a = document.createElement('a')
+// a.href = ""
+// setTimeout(()=>{
+//     a.click()
+
+// },500)
+
+
+    if (foundUser) {
+        alert("Login successful for", foundUser.username);
+        window.location.href = "/YCD-Bank/Pages/sidebar.html"
+    } else {
+        alert("Incorrect username or password!");
+    }
+
+    let currentUser = foundUser
+    // console.log(currentUser.username);
+    if(currentUser) {
+    localStorage.setItem("currentUser", JSON.stringify(currentUser)) ;
+    }
+})
+
+
+
+// console.log(currentUser);
 
 /* Aziz abada*/
 
