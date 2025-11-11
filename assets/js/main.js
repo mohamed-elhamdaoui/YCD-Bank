@@ -220,7 +220,7 @@ save_login.addEventListener("click", () => {
 
     if (foundUser) {
         alert("Login successful for", foundUser.username);
-        window.location.href = "/YCD-Bank/Pages/sidebar.html"
+        window.location = "/Pages/tableau_de_board.html"
     } else {
         alert("Incorrect username or password!");
     }
