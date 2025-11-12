@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script>
         tailwind.config = {
             darkMode: 'class'
@@ -118,29 +119,129 @@
 
             <main class="flex-1 overflow-y-auto p-6 sm:ml-14 ml-10 transition-all duration-300">
                 <header>
-                    <h1 class="text-2xl font-bold  mb-1">Paiement de Factures </h1>
-                    <p class="text-sm text-gray-600 dark:text-gray-300">Payez vos factures en quelques clics</p>
+                    <h1 class="text-2xl font-bold  mb-1">Recharges Télécom </h1>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Rechargez vos lignes inwi, IAM, Orange</p>
                 </header>
 
                 <section>
+
+                    <div class="border-2 border-black w-full h-fit bg-blue-100 rounded-lg mt-10 p-7 dark:bg-gray-600 hidden ">
+                        <div class="flex justify-between">
+                            <h1 class="text-gray-500 text-2xl font-semibold">Numéros Favoris</h1>
+                            <button class="border-2 border-black bg-white rounded-lg px-7 py-2">+ Ajouter</button>
+                        </div>
+
+                        <div class="flex flex-wrap gap-5  mt-5   ">
+
+                            <!-- <div class="h-fit p-4 bg-white w-[45%] rounded-2xl relative">
+                                <div>
+                                    <span>momo</span>
+                                    <span class="border border-black rounded-lg p-1 text-sm">IAM</span>
+                                </div>
+                                <p class="text-gray-500">0612345678</p>
+                                <span class="border-2 absolute right-7 inset-y-0 top-1/2 -translate-y-1/2">
+                                    <i class="fa-solid fa-trash"></i>
+                                </span>
+                            </div> -->
+                            
+                            
+
+                        </div>
+                    </div>
+
                     <div
                         class="border-2 border-black w-full mx-auto h-fit pb-10 bg-blue-100 rounded-lg mt-10 p-7 dark:bg-gray-600">
-                        <h1 class="text-3xl font-medium">Nouvelle Facture</h1>
+                        <h1 class="text-3xl font-medium">Nouvelle Recharge</h1>
                         <div class="flex flex-col gap-4 mt-7">
-                            <span class="text-xl font-semibold">Référence de la facture</span>
-                            <input class="bg-gray-100 p-4 rounded-xl" placeholder="ABC123456" type="text" name="" id="">
-                            <p class="text-sm ">Format: 6-20 caractères alphanumériques en majuscules</p>
-                            <span class="text-xl font-semibold">Montant (MAD)</span>
-                            <input class="bg-gray-100 p-4 rounded-xl" placeholder="0.00" type="text" name="" id="">
+                            <span class="text-xl font-semibold">Opérateur</span>
 
+                            <select
+                                class="w-full border-2 border-gray-300 rounded-lg px-3 py-2 bg-gray-100 text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 cursor-pointer shadow-sm hover:shadow-md transition-shadow duration-200">
+                                <option value="" disabled selected hidden>Sélectionnez un opérateur</option>
+                                <option value="inwi">Inwi</option>
+                                <option value="orange">Orange</option>
+                                <option value="iam">Maroc Telecom (IAM)</option>
+                            </select>
+
+
+                            <span class="text-xl font-semibold ">Numéro de téléphone</span>
+                            <input
+                                class="bg-gray-100 p-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-500"
+                                placeholder="0612345678" type="number" name="" id="">
+                            <p class="text-sm ">Format: 06/07/05 + 8 chiffres</p>
+
+                            <span class="text-xl font-semibold ">Montant rapide (MAD)</span>
+                            <div class="flex justify-between gap-2">
+                                <button
+                                    class="flex-1 border-2 border-black rounded-2xl py-3 hover:bg-white text-lg font-medium focus:outline-none focus:ring-1 focus:ring-gray-500 shadow-sm hover:shadow-md transition-shadow duration-200">10</button>
+                                <button
+                                    class="flex-1 border-2 border-black rounded-2xl py-3 hover:bg-white text-lg font-medium focus:outline-none focus:ring-1 focus:ring-gray-500 shadow-sm hover:shadow-md transition-shadow duration-200">20</button>
+                                <button
+                                    class="flex-1 border-2 border-black rounded-2xl py-3 hover:bg-white text-lg font-medium focus:outline-none focus:ring-1 focus:ring-gray-500 shadow-sm hover:shadow-md transition-shadow duration-200">50</button>
+                                <button
+                                    class="flex-1 border-2 border-black rounded-2xl py-3 hover:bg-white text-lg font-medium focus:outline-none focus:ring-1 focus:ring-gray-500 shadow-sm hover:shadow-md transition-shadow duration-200">100</button>
+                                <button
+                                    class="flex-1 border-2 border-black rounded-2xl py-3 hover:bg-white text-lg font-medium focus:outline-none focus:ring-1 focus:ring-gray-500 shadow-sm hover:shadow-md transition-shadow duration-200">200</button>
+                            </div>
+
+                            <span class="text-xl font-semibold ">ou montant personnalisé</span>
+                            <input
+                                class="bg-gray-100 p-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-500"
+                                placeholder="0.00" type="text" name="" id="">
+                            <!--     -->
                             <div class="flex justify-between p-5 border border-black rounded-2xl">
                                 <span class="text-gray-500 font-semibold text-base">Solde disponible:</span>
                                 <span>15420.50 MAD</span>
                             </div>
-                            <button class="bg-[#030212] text-white rounded-lg py-3 text-xl">Payer la facture</button>
+                            <button class="bg-[#030212] text-white rounded-lg py-3 text-xl">Recharger</button>
                         </div>
                     </div>
+
+                    <div
+                        class="border-2 border-black w-full mx-auto h-fit bg-blue-100 rounded-lg mt-10 p-7 dark:bg-gray-600 flex flex-col items-center gap-3 ">
+                        <h1 class="text-gray-500 text-2xl font-semibold">Aucun numéro favori enregistré</h1>
+                        <button id="addFav" class="border-2 border-black bg-white rounded-lg px-7 py-2">+ Ajouter un favori</button>
+                    </div>
                 </section>
+
+                <div id="popup"
+                    class="shadow-lg border-2 border-black w-[40%] h-fit bg-white  fixed left-0 right-0 mx-auto top-1/2 -translate-y-1/2 z-50 invisible  rounded-md">
+                    <h1 class="text-2xl font-bold p-3">Ajoute un favori</h1>
+                    <div class=" h-fit p-3 flex flex-wrap flex-col gap-3 ">
+
+                        <div class="flex flex-col">
+                            <span class="text-lg font-semibold ">Opérateur</span>
+                            <select class="border-2 rounded-lg p-2 text-gray-500" name="" id="type">
+                                <option value="" disabled selected hidden>Sélectionner </option>
+                                <option value="inwi">Inwi</option>
+                                <option value="orange">Orange</option>
+                                <option value="iam">Maroc Telecom (IAM)</option>
+                            </select>
+
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-lg font-semibold ">Numéro de téléphone</span>
+                            <input id="description" class="border-2  rounded-lg  p-2" type="text"
+                                placeholder="0612345678">
+
+                        </div>
+
+
+                        <div class="flex flex-col">
+                            <span class="text-lg font-semibold ">Libellé (optionnel)</span>
+                            <input id="montant" class="border-2 rounded-lg  p-2" type="number"
+                                placeholder="Mon téléphone">
+                        </div>
+
+
+                    </div>
+                    <div class="p-3 flex justify-center gap-6">
+                        <button id="close"
+                            class="bg-white text-black px-4 border-2 border-black py-2 rounded hover:bg-gray-100 ">Annuler</button>
+                        <button id="save"
+                            class="bg-[#030212] text-white px-4 py-2 rounded hover:bg-gray-900">Sauvgarder</button>
+                    </div>
+                </div>
             </main>
         </div>
     </div>
