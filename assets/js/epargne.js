@@ -91,10 +91,15 @@ function enregistrerVirementEpargne(e){
 
 const popupForm= document.getElementById('formulaire');
 popupForm.classList.add('hidden');
+document.getElementById('formulaire').reset();
+
 }
     // initiallisation des soldes 
     document.getElementById('soldeEpargne').textContent=formatMontant(compteEpargneValue);
     document.getElementById('comptePrincipal').textContent=formatMontant(comptePrincipalValue);
     document.getElementById('totalComptes').textContent=formatMontant(compteEpargneValue+comptePrincipalValue);
 
- 
+    //exporter le rib en pdf 
+document.getElementById('btnExportRib').addEventListener('click', function(){
+
+})
