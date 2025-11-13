@@ -24,7 +24,7 @@ const save = document.getElementById("save");
 
 save.addEventListener("click", () => {
     popup.classList.remove("invisible");
-    
+
     // let operateur = operateur.value;
     let opppTele = operateur.value;
     let libelleTele = libbele.value;
@@ -33,7 +33,7 @@ save.addEventListener("click", () => {
     console.log(libelleTele)
     console.log(numTele)
 
-    
+
 
     const bloc = `<div class="h-fit p-4 bg-white w-[45%] rounded-2xl relative">
                                 <div>
@@ -47,37 +47,99 @@ save.addEventListener("click", () => {
                             </div>`
 
 
-    const favoriSpace = document.getElementById("favoriSpace") ;
-    const favBloc = document.getElementById("favBloc") ;
+    const favoriSpace = document.getElementById("favoriSpace");
+    const favBloc = document.getElementById("favBloc");
 
 
-    favBloc.insertAdjacentHTML("afterbegin",bloc);
+    favBloc.insertAdjacentHTML("afterbegin", bloc);
 
-    favoriSpace.classList.remove("hidden") ;
+    favoriSpace.classList.remove("hidden");
     const aucunNum = document.getElementById("aucunNum");
-    if(!aucunNum.classList.contains("hidden")) {
+    if (!aucunNum.classList.contains("hidden")) {
         aucunNum.classList.add("hidden");
 
     }
-    
+
+    let favoris = JSON.parse(localStorage.getItem("favoris")) || [];
+    console.log(favoris);
+
+    let id = Date.now();
+    let favori = {
+        operateur: opppTele,
+        numero: numTele,
+        libelle: libelleTele,
+        id: id
+    }
+
+    favoris.push(favori);
+    localStorage.setItem("favoris", JSON.stringify(favoris));
+
+
     popup.classList.add("invisible");
-    
+
 });
 
 let add = document.querySelectorAll(".addFav")
 console.log(add);
 
-add.forEach((btn)=> {
-    btn.addEventListener("click",()=> {
-            console.log(btn)
+add.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        console.log(btn)
 
         popup.classList.remove("invisible");
     })
-} )
+})
 
 
-const solde = document.getElementById("solde") ;
-let arr =JSON.parse(localStorage.getItem("users")) || [] 
+
+function loadData() {
+
+
+    const favBloc = document.getElementById("favBloc");
+    let fav = JSON.parse(localStorage.getItem("favoris"));
+
+
+    console.log(fav);
+    fav.forEach(element => {
+        const bloc = `<div id="${element.id}" class="h-fit p-4 bg-white w-[45%] rounded-2xl relative">
+                                <div>
+                                    <span>${element.libelle}</span>
+                                    <span class="border border-black rounded-lg p-1 text-sm">${element.operateur}</span>
+                                </div>
+                                <p class="text-gray-500">${element.numero}</p>
+                                <span class="absolute right-7 inset-y-0 top-1/2 -translate-y-1/2 cursor-pointer">
+                                    <i class="fa-solid fa-trash"></i>
+                                </span>
+                            </div>`
+
+
+        favBloc.insertAdjacentHTML("afterbegin", bloc);
+    });
+
+}
+
+
+let fav = JSON.parse(localStorage.getItem("favoris"));
+// let isFavori = false
+if (fav) {
+    loadData();
+    const favoriSpace = document.getElementById("favoriSpace");
+    const aucunNum = document.getElementById("aucunNum");
+    favoriSpace.classList.remove("hidden")
+    aucunNum.classList.add("hidden");
+} 
+
+
+
+
+
+
+
+
+
+
+const solde = document.getElementById("solde");
+let arr = JSON.parse(localStorage.getItem("users")) || []
 console.log()
 solde.textContent = arr[0].comptePrincipal.soldePrincipal
 // solde.textContent =Number(solde.textContent ) + 200 ;
