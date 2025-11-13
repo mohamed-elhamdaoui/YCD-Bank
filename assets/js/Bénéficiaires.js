@@ -23,8 +23,8 @@ form.addEventListener('submit', (e) => {
 
 
     const regexNom = /^[a-zA-ZÀ-ÿ\s'-]{3,50}$/;
-    const regexIBAN = /^[0-9]{24}$/;
-    const regexBanque = /^[a-zA-ZÀ-ÿ\s'-]{3,50}$/;
+    const regexIBAN = /^[0-9]{10,}$/;
+    const regexBanque = /^[a-zA-ZÀ-ÿ\s'-]{2,50}$/;
 
 
     if (!nom || !iban || !banque) {
@@ -33,12 +33,12 @@ form.addEventListener('submit', (e) => {
     }
 
     if (!regexNom.test(nom)) {
-        alert("Le nom doit contenir uniquement des lettres et avoir entre 3 et 50 caractères.");
+        alert("Le nom doit contenir uniquement des lettres.");
         return;
     }
 
     if (!regexIBAN.test(iban)) {
-        alert("L'IBAN n'est pas valide. Exemple : FR7612345987650123456789014");
+        alert("L'IBAN doit etre 24 nombre");
         return;
     }
 
