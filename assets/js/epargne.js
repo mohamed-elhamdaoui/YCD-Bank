@@ -1,8 +1,11 @@
 let soldeVisible= true;
 
-let utilisateur=JSON.parse(localStorage.getItem('users')) 
+let utilisateur=JSON.parse(localStorage.getItem('users'));
+let utilisateur1=JSON.parse(localStorage.getItem('currentUser'));
 
-let compteEpargneValue= utilisateur[0].compteEprange.soldeEpargne;
+
+
+let compteEpargneValue= utilisateur1.compteEprange.soldeEpargne;
         document.getElementById('soldeEpargne').innerText= compteEpargneValue;
 
 let comptePrincipalValue= utilisateur[0].comptePrincipal.soldePrincipal;
