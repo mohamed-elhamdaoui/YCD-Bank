@@ -83,24 +83,29 @@ function afficherBeneficiaires() {
     filtresAppliques.forEach((b, index) => {
         const item = document.createElement('div');
         item.className =
-            'flex justify-between items-center p-3 bg-white rounded-lg shadow-sm border border-gray-200 mb-2';
+            'flex justify-between items-center p-3 bg-white rounded-lg shadow-sm border border-gray-200 mb-2 dark:bg-gray-600 ';
         item.innerHTML = `
       <div>
-        <p class="font-medium">${b.nom}</p>
-        <p class="text-sm text-gray-500">${b.iban}</p>
-        <p class="text-sm text-gray-500">${b.banque}</p>
-        <p class="text-sm ${b.bloque ? 'text-red-600' : 'text-green-600'} font-semibold">
-          ${b.bloque ? 'Bloqué' : 'Débloqué'}
-        </p>
+        <p class="font-medium dark:text-black"><b>Nom: </b>${b.nom}</p>
+        <p class="text-sm text-gray-500 dark:text-black"><b>RIP: </b> ${b.iban}</p>
+        <p class="text-sm text-gray-500 dark:text-black"><b>Banque: </b>${b.banque}</p>
       </div>
       <div class="flex gap-3">
-        <button class="toggle-bloque text-blue-500 hover:text-blue-700 font-semibold" data-index="${index}">
-          ${b.bloque ? 'Débloquer' : 'Bloquer'}
-        </button>
-        <button class="text-red-500 hover:text-red-700 font-semibold" data-delete="${index}">
-          Supprimer
-        </button>
-      </div>
+    <button 
+        class="toggle-bloque flex items-center gap-1 text-blue-500 hover:text-blue-700 font-semibold"
+        data-index="${index}"
+    >
+        <i class='bx ${b.bloque ? "bx-lock-open" : "bx-lock"} text-lg'></i>
+    </button>
+
+    <button 
+        class="flex items-center gap-1 text-red-500 hover:text-red-700 font-semibold"
+        data-delete="${index}"
+    >
+        <i class='bx bx-trash text-lg'></i>
+    </button>
+</div>
+
     `;
         listeBeneficiaires.appendChild(item);
     });
