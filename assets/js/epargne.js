@@ -1,6 +1,15 @@
 let soldeVisible= true;
-let compteEpargneValue= 80000000000;
-let comptePrincipalValue= 20000;
+
+let utilisateur=JSON.parse(localStorage.getItem('users')) 
+
+let compteEpargneValue= utilisateur[0].compteEprange.soldeEpargne;
+        document.getElementById('soldeEpargne').innerText= compteEpargneValue;
+
+let comptePrincipalValue= utilisateur[0].comptePrincipal.soldePrincipal;
+        document.getElementById('comptePrincipal').innerText= comptePrincipalValue;
+
+        let ribCompteEpargne= utilisateur[0].compteEprange.ribEpargne;
+        document.getElementById('ribEpargne').innerText= ribCompteEpargne;
 
 function formatMontant(montant) {
         return new Intl.NumberFormat('fr-MA', {
@@ -136,4 +145,9 @@ document.getElementById('formulaire').reset();
         });
         
         //affichage correct du rib et du numero de compte
-        let RibEpargne= document.getElementById('ribEpargne');
+        
+        
+        
+        
+
+        
