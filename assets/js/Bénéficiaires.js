@@ -83,12 +83,12 @@ function afficherBeneficiaires() {
     filtresAppliques.forEach((b, index) => {
         const item = document.createElement('div');
         item.className =
-            'flex justify-between items-center p-3 bg-white rounded-lg shadow-sm border border-gray-200 mb-2 dark:bg-gray-600 ';
+            'flex justify-between items-center p-3 bg-white rounded-lg shadow-sm border border-gray-200 mb-2 dark:bg-gray-600 dark:text-black ';
         item.innerHTML = `
       <div>
-        <p class="font-medium dark:text-black"><b>Nom: </b>${b.nom}</p>
-        <p class="text-sm text-gray-500 dark:text-black"><b>RIP: </b> ${b.iban}</p>
-        <p class="text-sm text-gray-500 dark:text-black"><b>Banque: </b>${b.banque}</p>
+        <p class="font-medium"><b>Nom:</b> ${b.nom}</p>
+        <p class="text-sm text-gray-500 dark:text-black"><b>RIP:</b> ${b.iban}</p>
+        <p class="text-sm text-gray-500 dark:text-black"><b>Banque:</b> ${b.banque}</p>
       </div>
       <div class="flex gap-3">
     <button 
