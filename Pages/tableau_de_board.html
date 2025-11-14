@@ -124,7 +124,8 @@
                 <section>
                     <div class="my-3 md:flex md:gap-36 ">
 
-                        <div class="bg-blue-600 my-6 rounded-lg w-96 h-52 p-4 text-white dark:bg-blue-900 relative">
+                        <div
+                            class="bg-gradient-to-br from-blue-600 to-blue-400  dark:from-blue-900 dark:to-blue-700 my-6 rounded-xl w-96 h-52 p-4 text-white dark:bg-blue-900 relative hover:scale-105 hover:shadow-xl cursor-pointer  transition-transform duration-300">
                             <p class="text-xl font-medium">Compte Principal</p><br>
                             <p id="solde-principal" class="text-xl font-medium solde">***********</p><br>
                             <p class="text-xl font-medium">RIB</p>
@@ -141,7 +142,8 @@
                         </div>
 
 
-                        <div class="bg-green-600 my-6 rounded-lg w-96 h-52 p-4 dark:bg-green-900 text-white relative">
+                        <div
+                            class="bg-gradient-to-br from-green-600 to-green-400 my-6 rounded-lg w-96 h-52 p-4 dark:bg-green-900 text-white relative hover:scale-105 hover:shadow-xl cursor-pointer  transition-transform duration-300">
                             <p class="text-xl font-medium">Compte Épargne</p><br>
                             <p id="solde-epargne" class="text-xl font-normal solde">***********</p><br>
                             <p class="text-xl font-medium">RIB</p>
@@ -155,25 +157,10 @@
 
                     <div
                         class="bg-white dark:bg-gray-800 dark:text-white rounded-lg border border-gray-300 p-4 text-black">
-                        <p class="text-xl font-medium mb-3">Transactions Récentes</p>
+                    <h2 class="text-xl font-semibold mb-3 dark:text-white">Transactions récentes</h2>
 
-                        <div class="bg-red-300 dark:bg-red-700 rounded-lg px-3 py-3 mb-5">
-                            <span class="font-medium mr-44 md:mr-80">Discription</span>
-                            <span>99999 DH</span>
-                            <p class="text-gray-600 dark:text-gray-300">12-12-2025</p>
-                        </div>
+                        <ul id="transaction-list" class="space-y-3"></ul>
 
-                        <div class="bg-red-300 dark:bg-red-700 rounded-lg px-3 py-3 mb-5">
-                            <span class="font-medium mr-44 md:mr-80">Discription</span>
-                            <span>99999 DH</span>
-                            <p class="text-gray-600 dark:text-gray-300">12-12-2025</p>
-                        </div>
-
-                        <div class="bg-green-400 dark:bg-green-700 rounded-lg px-3 py-3 mb-5">
-                            <span class="font-medium mr-40 md:mr-80">Discription</span>
-                            <span>2090.05 DH</span>
-                            <p class="text-gray-600 dark:text-gray-300">12-12-2025</p>
-                        </div>
                     </div>
                 </section>
             </main>
@@ -224,6 +211,8 @@
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="../assets/js/tableau_de_board.js"></script>
+
+
 </body>
 
 

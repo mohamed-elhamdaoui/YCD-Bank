@@ -73,11 +73,16 @@ document.getElementById("btnVirementBenef").addEventListener("click", () => {
     const index = document.getElementById("selectBeneficiaire").value;
     const montant = parseFloat(document.getElementById("montantBenef").value);
 
-    if (!index) return alert("Veuillez sélectionner un bénéficiaire.");
-    if (!montant || montant <= 0) return alert("Montant invalide.");
+    if (!index) {
+        return alert("Veuillez sélectionner un bénéficiaire.");
+    }
+    if (!montant || montant <= 0) {
+        return alert("Montant invalide.");
+    }
 
-    if (montant > currentUser.comptePrincipal.soldePrincipal)
+    if (montant > currentUser.comptePrincipal.soldePrincipal) {
         return alert("Solde insuffisant.");
+    }
 
     currentUser.comptePrincipal.soldePrincipal -= montant;
 

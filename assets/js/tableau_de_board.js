@@ -14,9 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const soldeEpargneEl = document.getElementById("solde-epargne");
     const ribEpargneEl = document.getElementById("rib-epargne");
 
-    soldePrincipalEl.dataset.value = currentUser.comptePrincipal.soldePrincipal + " DH";
+    soldePrincipalEl.dataset.value = currentUser.comptePrincipal.soldePrincipal + " MAD";
     ribPrincipalEl.textContent = currentUser.comptePrincipal.ribPrincipale;
-    soldeEpargneEl.dataset.value = currentUser.compteEprange.soldeEpargne + " DH";
+    soldeEpargneEl.dataset.value = currentUser.compteEprange.soldeEpargne + " MAD";
     ribEpargneEl.textContent = currentUser.compteEprange.ribEpargne;
 
     soldePrincipalEl.textContent = "***********";
@@ -98,7 +98,33 @@ document.addEventListener("DOMContentLoaded", () => {
         doc.save(`RIB_${currentUser.username}.pdf`);
     });
 
+    function afficherTransactions() {
+        const liste = document.getElementById("transaction-list");
+        const historique = JSON.parse(localStorage.getItem("historique")) || [];
 
+        liste.innerHTML = "";
+
+        const recentes = historique.slice(-5).reverse();
+
+        recentes.forEach(t => {
+            const li = document.createElement("li");
+            li.className = "p-3 border border-gray-300 dark:border-gray-700 rounded-lg flex justify-between items-center";
+
+            li.innerHTML = `
+                <div>
+                    <p class="font-medium dark:text-white">${t.type}</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">${t.details}</p>
+                </div>
+                <span class="text-right font-semibold 
+                        ${t.montant < 0 ? 'text-red-500' : 'text-green-500'}">
+                    ${t.montant} DH
+                </span>
+            `;
+
+            liste.appendChild(li);
+        });
+    }
+    afficherTransactions();
 
 });
 
