@@ -159,7 +159,7 @@
                         <div class="flex flex-col gap-4 mt-7">
                             <span class="text-xl font-semibold">Opérateur</span>
 
-                            <select
+                            <select id="operation"
                                 class="w-full border-2 border-gray-300 rounded-lg px-3 py-2 bg-gray-100 text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 cursor-pointer shadow-sm hover:shadow-md transition-shadow duration-200">
                                 <option value="" disabled selected hidden>Sélectionnez un opérateur</option>
                                 <option value="inwi">Inwi</option>
@@ -169,13 +169,13 @@
 
 
                             <span class="text-xl font-semibold ">Numéro de téléphone</span>
-                            <input
+                            <input id="numeroTel"
                                 class="bg-gray-100 p-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-500"
                                 placeholder="0612345678" type="number" name="" id="">
                             <p class="text-sm ">Format: 06/07/05 + 8 chiffres</p>
 
                             <span class="text-xl font-semibold ">Montant rapide (MAD)</span>
-                            <div class="flex justify-between gap-2">
+                            <div id="btnParent" class="flex justify-between gap-2">
                                 <button
                                     class="flex-1 border-2 border-black rounded-2xl py-3 hover:bg-white text-lg font-medium focus:outline-none focus:ring-1 focus:ring-gray-500 shadow-sm hover:shadow-md transition-shadow duration-200">10</button>
                                 <button
@@ -189,15 +189,15 @@
                             </div>
 
                             <span class="text-xl font-semibold ">ou montant personnalisé</span>
-                            <input
+                            <input  id="mntantPrsnl"
                                 class="bg-gray-100 p-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-500"
-                                placeholder="0.00" type="text" name="" id="">
+                                placeholder="0.00" type="text" name="" >
                             <!--     -->
                             <div class="flex justify-between p-5 border border-black rounded-2xl">
                                 <span class="text-gray-500 font-semibold text-base">Solde disponible:</span>
                                 <span> <span id="solde">15420.50</span> MAD</span>
                             </div>
-                            <button class="bg-[#030212] text-white rounded-lg py-3 text-xl">Recharger</button>
+                            <button id="saveRecharge" class="bg-[#030212] text-white rounded-lg py-3 text-xl">Recharger</button>
                         </div>
                     </div>
 

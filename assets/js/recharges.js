@@ -94,19 +94,19 @@ add.forEach((btn) => {
 
 function loadData() {
 
-const favoriSpace = document.getElementById("favoriSpace");
+    const favoriSpace = document.getElementById("favoriSpace");
     const favBloc = document.getElementById("favBloc");
     const aucunNum = document.getElementById("aucunNum");
     let fav = JSON.parse(localStorage.getItem("favoris"));
 
-    favBloc.innerHTML = "" ;
+    favBloc.innerHTML = "";
 
     console.log(fav.length)
     if (fav.length === 0) {
         favoriSpace.classList.add("hidden");
         aucunNum.classList.remove("hidden");
         return
-    } 
+    }
 
     favoriSpace.classList.remove("hidden");
     aucunNum.classList.add("hidden");
@@ -134,10 +134,10 @@ const favoriSpace = document.getElementById("favoriSpace");
 
         favBloc.insertAdjacentHTML("afterbegin", bloc);
     });
-    
+
 }
 
-loadData() ;
+loadData();
 // let fav = JSON.parse(localStorage.getItem("favoris"));
 // console.log(fav) 
 // // let isFavori = false
@@ -188,3 +188,86 @@ function deleteElem(id) {
 
 
 }
+
+
+
+const favBloc = Array.from(document.getElementById("favBloc").children)
+
+favBloc.forEach(element => {
+    element.addEventListener("click", (e) => {
+        // console.log(e.target.children[0].children[1].textContent)
+        // console.log(e.target.children[1].textContent)
+        let operation = document.getElementById("operation")
+        let numeroTel = document.getElementById("numeroTel");
+        numeroTel.focus()
+        operation.focus()
+        numeroTel.value = Number(e.target.children[1].textContent);
+        operation.value = e.target.children[0].children[1].textContent;
+        // console.log(numeroTel.value)
+        // operation = e.target.children[0].children[1].textContent
+    })
+});
+
+
+const btns = Array.from(document.getElementById("btnParent").children)
+// console.log(btns[0])
+
+btns.forEach(element => {
+    element.addEventListener("click", () => {
+        console.log(element.textContent)
+        let mntantPrsnl = document.getElementById("mntantPrsnl");
+        mntantPrsnl.focus();
+        mntantPrsnl.value = element.textContent;
+        btns.forEach((btn) => {
+            if (btn.classList.contains('bg-white')) {
+                btn.classList.remove('bg-white')
+            }
+        })
+
+        element.classList.add('bg-white')
+
+
+        console.log(mntantPrsnl)
+    })
+});
+
+
+const saveRecharge = document.getElementById("saveRecharge");
+
+saveRecharge.addEventListener("click", () => {
+    let mntantPrsnl = document.getElementById("mntantPrsnl").value;
+    let operation = document.getElementById("operation").value;
+    let numeroTel = document.getElementById("numeroTel").value;
+
+    console.log(operation);
+    console.log(numeroTel);
+    console.log(mntantPrsnl);
+    
+    let recharge = {
+        operateur : operation,
+        numero : numeroTel , 
+        montant : mntantPrsnl ,
+        date : new Date()
+    }
+
+    const recharges = JSON.parse(localStorage.getItem("recharges")) || [] ;
+    console.log(recharges)
+
+    recharges.push(recharge) ;
+
+    localStorage.setItem("recharges",JSON.stringify(recharges))
+
+
+
+})
+
+// let operation = document.getElementById("operation")
+// let numeroTel = document.getElementById("numeroTel");
+
+// console.log(operation.value)
+// Array.from(favoriSpace).forEach(element => {
+// });
+
+
+
+
