@@ -106,6 +106,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const recentes = historique.slice(-5).reverse();
 
+        if (recentes.length === 0) {
+            const li = document.createElement("li");
+            li.className= "p-3 border border-gray-300 dark:border-gray-700 rounded-lg text-center";
+            li.innerHTML=`<p class="class="font-medium dark:text-white"> Aucune transaction pour le moment</p>`;
+            liste.appendChild(li);
+            return;
+        }
+
         recentes.forEach(t => {
             const li = document.createElement("li");
             li.className = "p-3 border border-gray-300 dark:border-gray-700 rounded-lg flex justify-between items-center";
