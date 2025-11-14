@@ -38,7 +38,7 @@
                 </button>
 
                 <div class="flex flex-col items-center ">
-                    <img src="../assets/img/logo.png" alt="logo" class="w-24 mb-5 dark:invert dark:brightness-0">
+                    <img src="../assets/img/ycd-logo.png" alt="logo" class="w-24 mb-5 dark:invert dark:brightness-0">
                 </div>
 
                 <nav
@@ -53,56 +53,56 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#"
+                            <a href="../Pages/Bénéficiaires.html"
                                 class="flex items-center gap-3 p-2 rounded-lg text-gray-900 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">
                                 <i class='bx bx-group text-xl'></i>
                                 <span>Bénéficiaires</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#"
+                            <a href="../Pages/virements.html"
                                 class="flex items-center gap-3 p-2 rounded-lg text-gray-900 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">
                                 <i class='bx bx-send text-xl'></i>
                                 <span>Virements</span>
                             </a>
                         </li>
                         <li>
-                            <a href="facture.html"
+                            <a href="../Pages/facture.html"
                                 class="flex items-center gap-3 p-2 rounded-lg text-gray-900 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">
                                 <i class='bx bx-receipt text-xl'></i>
                                 <span>Factures</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#"
+                            <a href="../Pages/recharge.html"
                                 class="flex items-center gap-3 p-2 rounded-lg text-gray-900 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">
                                 <i class='bx bx-mobile text-xl'></i>
                                 <span>Recharges</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#"
+                            <a href="../Pages/"
                                 class="flex items-center gap-3 p-2 rounded-lg text-gray-900 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">
                                 <i class='bx bx-credit-card text-xl'></i>
                                 <span>Ma Carte</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#"
+                            <a href="../Pages/epargne.html"
                                 class="flex items-center gap-3 p-2 rounded-lg text-gray-900 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">
                                 <i class='bx bx-coin-stack text-xl'></i>
                                 <span>Compte Épargne</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#"
+                            <a href="../Pages/historique.html"
                                 class="flex items-center gap-3 p-2 rounded-lg text-gray-900 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">
                                 <i class='bx bx-time text-xl'></i>
                                 <span>Historique</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#"
+                            <a href="../Pages/devises.html"
                                 class="flex items-center gap-3 p-2 rounded-lg text-gray-900 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">
                                 <i class='bx bx-dollar text-xl'></i>
                                 <span>Devises</span>
@@ -122,18 +122,16 @@
                 <section>
             <div class="mb-6">
                 <div class="flex justify-between items-center mb-2">
-                    <h1 class="text-2xl  sm:text-3xl font-bold text-gray-800">Compte Épargne</h1>
-                    <div class="text-sm text-gray-600">
-                        <span id="userName">Nom Prénom</span>
-                    </div>
+                    <h1 class="text-2xl  sm:text-3xl font-bold text-gray-800 dark:text-white">Compte Épargne</h1>
+                    
                 </div>
-                <p class="text-gray-600">Consultez votre compte épargne</p>
+                <p class="text-gray-600 dark:text-white">Consultez votre compte épargne</p>
             </div>
 
 
             <div
                 class="bg-gradient-to-br from-green-600 to-green-400 rounded-2xl shadow-2xl p-6 sm:p-8 text-white mb-6">
-                <div class="flex justify-between items-start mb-8">
+                <div class="flex justify-between items-start mb-8 dark:text-black">
                     <div>
                         <p class="text-sm opacity-90 mb-1">Compte Épargne</p>
                         <h2 class="text-3xl sm:text-4xl font-bold">
@@ -146,7 +144,7 @@
                         <i class='bx bx-show text-2xl' id="eyeIcon"></i>
                     </button>
                 </div>
-                <div class="mb-4">
+                <div class="mb-4 dark:text-black">
                     <p class="text-sm opacity-90 mb-2">RIB Épargne</p>
                     <div class="bg-white bg-opacity-20 rounded-lg p-3 font-mono text-sm">
                         <span id="ribEpargne">2308 0010 0000 2807 0032 1325</span>
@@ -154,40 +152,40 @@
                 </div>
 
                 <div>
-                    <p class="text-sm opacity-90 mb-1">Numéro de compte</p>
-                    <p class="font-mono text-lg" id="numeroCompte">2807003213</p>
+                    <p class="text-sm opacity-90 mb-1 dark:text-black">Numéro de compte</p>
+                    <p class="font-mono text-lg dark:text-black" id="numeroCompte">2807003213</p>
                 </div>
 
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 mt-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 mt-8 ">
                 <button id="btnExportRib"
-                    class="bg-white p-4 rounded-xl shadow hover:shadow-lg transition-all flex items-center gap-3 group">
+                    class="bg-white p-4 rounded-xl shadow hover:shadow-lg transition-all flex items-center gap-3 group dark:bg-gray-600 ">
                     <div class="bg-blue-100 p-3 rounded-lg group-hover:bg-blue-200 transition-colors">
                         <i class='bx bx-download text-2xl text-blue-600'></i>
                     </div>
-                    <div class="text-left">
-                        <p class="font-semibold text-gray-800">Exporter le RIB</p>
-                        <p class="text-sm text-gray-500">Format PDF</p>
+                    <div class="text-left ">
+                        <p class="font-semibold text-gray-800 dark:text-white">Exporter le RIB</p>
+                        <p class="text-sm text-gray-500 dark:text-white">Format PDF</p>
                     </div>
                 </button>
                 <button id="btnVirement"
-                    class="bg-white p-4 rounded-xl shadow hover:shadow-lg  flex items-center gap-3 group  ">
+                    class="bg-white p-4 rounded-xl shadow hover:shadow-lg  flex items-center gap-3 group dark:bg-gray-600 dark:text-white">
                     <div class="bg-green-100 p-3 rounded-lg group-hover:bg-green-200 ">
                         <i class='bx bx-transfer text-2xl text-green-600'></i>
                     </div>
                     <div class="text-left">
-                        <p class="font-semibold text-gray-800">Virement vers principal</p>
-                        <p class="text-sm text-gray-500">Depuis compte épargne</p>
+                        <p class="font-semibold text-gray-800 dark:text-white">Virement vers principal</p>
+                        <p class="text-sm text-gray-500 dark:text-white">Depuis compte épargne</p>
                     </div>
                 </button>
             </div>
             <div class="rounded-2xl border-green-100  shadow-2xl p-6 sm:p-8 text-black mb-6">
                 <div class="justify-between items-start mb-8">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Informations</h3>
-                    <div class="bg-blue-50  border-blue-500 p-4 mb-4">
-                        <p class="text-sm text-gray-700">
-                            <i class='bx bx-info-circle text-blue-500 mr-2'></i>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4 dark:text-white">Informations</h3>
+                    <div class="bg-blue-50  border-blue-500 p-4 mb-4 dark:bg-gray-600 ">
+                        <p class="text-sm text-gray-700 dark:text-white ">
+                            <i class='bx bx-info-circle text-blue-500 mr-2 '></i>
                             <strong>Conseil :</strong> Votre compte épargne vous permet de mettre de l'argent de côté.
                             Utilisez la fonction de virement pour transférer des fonds entre vos comptes.
                         </p>
@@ -195,12 +193,12 @@
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div class="border-l-4 border-green-500 pl-4">
-                            <p class="text-sm text-gray-600 mb-1">Compte Principal</p>
-                            <p class="text-xl font-bold text-gray-800" id="comptePrincipal">15 420,50 MAD</p>
+                            <p class="text-sm text-gray-600 mb-1 dark:text-white">Compte Principal</p>
+                            <p class="text-xl font-bold text-gray-800 dark:text-white" id="comptePrincipal">15 420,50 MAD</p>
                         </div>
                         <div class="border-l-3 border-blue-500 pl-4">
-                            <p class="text-sm text-gray-600 mb-1">Total</p>
-                            <p class="text-xl font-bold text-gray-800" id="totalComptes">23 920,50 MAD</p>
+                            <p class="text-sm text-gray-600 mb-1 dark:text-white">Total</p>
+                            <p class="text-xl font-bold text-gray-800 dark:text-white" id="totalComptes">23 920,50 MAD</p>
                         </div>
                     </div>
 
