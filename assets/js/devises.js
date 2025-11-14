@@ -38,3 +38,46 @@ document.getElementById('btnCalculer').addEventListener("click", function (){
             alert("Erreur lors de la récupération du taux de change !");
         });
 })
+
+function afficherTaux(deviseSource, rates) {
+    const container = document.getElementById("listeTaux");
+    
+    // Vider l'ancien affichage
+    container.innerHTML = "";
+
+    // Liste des devises qu'on veut afficher
+    const devises = ["MAD", "EUR", "USD"];
+
+    devises.forEach(devise => {
+        if (rates[devise]) {
+
+            // Calcul du taux inverse
+            const taux = rates[devise];
+            const tauxInverse = 1 / taux;
+
+            // Création du bloc
+            const div = document.createElement("div");
+            div.className = "flex justify-between items-center p-4 bg-gray-50 rounded-lg";
+
+            div.innerHTML = `
+                <span class="text-gray-700 font-medium">1 ${deviseSource}</span>
+                <span class="text-gray-900 font-semibold">${taux.toFixed(4)} ${devise}</span>
+            `;
+
+            container.appendChild(div);
+
+            // Bloc inverse (ex: 1 EUR = X MAD)
+            if (devise !== deviseSource) {
+                const inverseDiv = document.createElement("div");
+                inverseDiv.className = "flex justify-between items-center p-4 bg-gray-50 rounded-lg";
+
+                inverseDiv.innerHTML = `
+                    <span class="text-gray-700 font-medium">1 ${devise}</span>
+                    <span class="text-gray-900 font-semibold">${tauxInverse.toFixed(4)} ${deviseSource}</span>
+                `;
+
+                container.appendChild(inverseDiv);
+            }
+        }
+    });
+}
