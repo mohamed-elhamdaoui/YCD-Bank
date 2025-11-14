@@ -1,16 +1,16 @@
-💳 YCD-BANK
+#💳 YCD-BANK
 
 Gérez facilement vos opérations — une mini-app bancaire simple, claire et rapide.
 
-🌐 [Visitez le site](https://ycd-bank.netlify.app/index.html)
+#🌐 [Visitez le site](https://ycd-bank.netlify.app/index.html)
 
-🧾 Aperçu
+#🧾 Aperçu
 
 YCD-BANK est une application web légère qui simule un mini-système bancaire permettant à l’utilisateur de créer un compte, se connecter, et gérer sa session — le tout uniquement en Front-End, avec JavaScript, Tailwind CSS, et le LocalStorage.
 
 Elle propose une interface simple, moderne et entièrement responsive, conçue pour tester et démontrer un flux complet d’authentification sans backend.
 
-⚙️ Fonctionnalités principales
+#⚙️ Fonctionnalités principales
 
 📝 Création de compte (Register)
 
@@ -38,7 +38,7 @@ Les comptes et sessions ne disparaissent pas après un rafraîchissement
 
 📱 Interface 100% responsive (mobile, tablette, desktop)
 
-🛠️ Stack utilisée
+#🛠️ Stack utilisée
 
 Langage : JavaScript (Vanilla JS)
 
@@ -48,7 +48,7 @@ Stockage : LocalStorage
 
 Hébergement : Netlify
 
-🚀 Installation locale
+#🚀 Installation locale
 # Clone le projet
 git clone https://github.com/mohamed-elhamdaoui/ycd-bank.git
 
@@ -57,15 +57,15 @@ cd ycd-bank
 
 # Ouvre le fichier index.html dans ton navigateur
 
-🧠 Author
+#🧠 Authors
 👨‍💻 Mohammed Elhamdaoui
 👨‍💻 Aziz Abada
 👨‍💻 mariem elhaimer
 
 
-📧 GitHub Profile:
+#📧 GitHub Profile:
 https://github.com/mohamed-elhamdaoui
 
-🪪 License
+#🪪 License
 
 This project is licensed under the MIT License — feel free to utiliser, modifier et améliorer.
