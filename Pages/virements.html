@@ -9,7 +9,7 @@
     <script>
         tailwind.config = { darkMode: 'class' }
     </script>
-    <title>Gestion des Bénéficiaires</title>
+    <title>Virements</title>
 </head>
 
 <body class="bg-white text-black dark:bg-gray-900 dark:text-white">
@@ -110,8 +110,75 @@
             </nav>
         </aside>
 
-        <main class="flex-1 overflow-y-auto transition-all duration-300 p-4 ml-10">
+        <main class="flex-1 overflow-y-auto transition-all duration-300 py-2">
+            <div class="max-w-4xl  mx-auto  px-4">
+                <h1 class="text-2xl font-bold mb-1">Virements</h1>
+                <p class="text-gray-600 dark:text-gray-300">
+                    Effectuez des virements vers vos bénéficiaires ou votre compte épargne
+                </p>
 
+                <div class="mt-6 bg-white border  dark:bg-gray-800 rounded-xl shadow p-6">
+
+                    <h2 class="text-xl font-semibold mb-4">Nouveau Virement</h2>
+                    <div class="flex bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden mb-2">
+
+                        <button id="tab-beneficiaire"
+                            class="w-1/2 py-3 text-center font-medium bg-white dark:bg-gray-900 dark:text-white border border-gray-300 dark:border-gray-700 rounded-l-full rounded-none border-r-0 focus:outline-none focus:ring-0 relative z-10">
+                            Vers bénéficiaire
+                        </button>
+                        <button id="tab-epargne"
+                            class="w-1/2 py-3 text-center font-medium text-gray-600 dark:text-gray-300 border border-gray-300 dark:border-gray-700 rounded-r-full rounded-none border-l-0 focus:outline-none focus:ring-0">
+                            Vers épargne
+                        </button>
+                    </div>
+
+
+                    <div id="section-beneficiaire">
+
+                        <label class="block mb-1">Bénéficiaire</label>
+                        <select id="selectBeneficiaire"
+                            class="w-full rounded-lg border-gray-300 dark:bg-gray-900 dark:border-gray-700 border dark:text-white mb-2 p-3">
+                            <option value="">Sélectionner un bénéficiaire</option>
+                        </select>
+
+                        <label class="block mb-1">Montant (MAD)</label>
+                        <input id="montantBenef" type="number" placeholder="2000"
+                            class="w-full p-3 rounded-lg dark:bg-gray-900 dark:border-gray-700 input-border border mb-2">
+                        <label class="block mb-1">Description (optionnelle)</label>
+                        <input id="descBenef" type="text" placeholder="Paiement facture, etc."
+                            class="w-full p-3 rounded-lg border border-gray-300 dark:bg-gray-900 dark:border-gray-700 mb-4">
+
+                        <div class="bg-blue-50 dark:bg-gray-700 p-4 border rounded-lg mb-6">
+                            <p>Solde disponible: <span id="soldePrincipal">0.00 MAD</span></p>
+                            <p>Plafond journalier restant: 5000.00 MAD</p>
+                        </div>
+
+                        <button id="btnVirementBenef"
+                            class="w-full py-3 bg-black dark:bg-white dark:text-black text-white rounded-lg font-semibold">
+                            Effectuer le virement
+                        </button>
+                    </div>
+
+
+                    <div id="section-epargne" class="hidden">
+
+                        <label class="block mb-1">Montant (MAD)</label>
+                        <input id="montantEpargne" type="number"
+                            class="w-full p-3 rounded-lg border border-gray-300 dark:bg-gray-900 dark:border-gray-700 mb-4">
+
+                        <div class="bg-blue-50 dark:bg-gray-700 border p-4 rounded-lg mb-6">
+                            <p>Solde compte principal: <span id="soldePrincipal2">0.00 MAD</span></p>
+                            <p>Solde compte épargne: <span id="soldeEpargne">0.00 MAD</span></p>
+                        </div>
+
+                        <button id="btnVirementEpargne"
+                            class="w-full py-3 bg-black dark:bg-white dark:text-black text-white rounded-lg font-semibold">
+                            Transférer vers épargne
+                        </button>
+                    </div>
+
+                </div>
+            </div>
         </main>
 
     </div>
@@ -140,6 +207,7 @@
             window.location = "/Pages/login.html";
         });
     </script>
+    <script src="../assets/js/virements.js"></script>
 
 
 </body>
