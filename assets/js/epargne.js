@@ -64,6 +64,13 @@ function enregistrerVirementEpargne(e){
     }
     
 
+    // Validation Regex pour le montant
+            const montantRegex = /^\d+(\.\d{1,2})?$/;
+            if (!montantRegex.test(montant)) {
+                alert('Format de montant invalide')    
+                return;
+            }
+
     const virment = JSON.parse(localStorage.getItem("virement"))  || []
     
     console.log(virment) ;
@@ -100,6 +107,30 @@ document.getElementById('formulaire').reset();
     document.getElementById('totalComptes').textContent=formatMontant(compteEpargneValue+comptePrincipalValue);
 
     //exporter le rib en pdf 
-document.getElementById('btnExportRib').addEventListener('click', function(){
+        document.getElementById('btnExportRib').addEventListener('click', function () {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
 
-})
+            doc.setFontSize(20);
+            doc.text('YCD BANK', 105, 20, { align: 'center' });
+
+            doc.setFontSize(16);
+            doc.text('Relevé d\'Identité Bancaire (RIB)', 105, 35, { align: 'center' });
+
+            doc.setFontSize(12);
+            doc.text('Compte Épargne', 20, 60);
+            doc.setFontSize(10);
+            doc.text('Titulaire: Nom Prénom', 20, 70);
+            doc.text('Date d\'édition: ' + new Date().toLocaleDateString('fr-FR'), 20, 80);
+
+            doc.setFontSize(12);
+            doc.text('Informations bancaires:', 20, 100);
+            doc.setFontSize(10);
+            doc.text('RIB: ' + document.getElementById('ribEpargne').textContent, 20, 110);
+            doc.text('Numéro de compte: ' + document.getElementById('numeroCompte').textContent, 20, 120);
+
+            doc.setFontSize(8);
+            doc.text('Ce document est généré automatiquement par YCD Bank', 105, 280, { align: 'center' });
+
+            doc.save('RIB_Compte_Epargne.pdf');
+        });
