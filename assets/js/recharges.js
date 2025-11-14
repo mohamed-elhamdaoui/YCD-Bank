@@ -159,7 +159,7 @@ loadData();
 
 
 const solde = document.getElementById("solde");
-let arr = JSON.parse(localStorage.getItem("users")) || []
+let arr = JSON.parse(localStorage.getItem("users"))
 console.log()
 solde.textContent = arr[0].comptePrincipal.soldePrincipal
 // solde.textContent =Number(solde.textContent ) + 200 ;
@@ -242,24 +242,69 @@ saveRecharge.addEventListener("click", () => {
     console.log(operation);
     console.log(numeroTel);
     console.log(mntantPrsnl);
-    
+
     let recharge = {
-        operateur : operation,
-        numero : numeroTel , 
-        montant : mntantPrsnl ,
-        date : new Date()
+        operateur: operation,
+        numero: numeroTel,
+        montant: mntantPrsnl,
+        date: new Date()
     }
 
-    const recharges = JSON.parse(localStorage.getItem("recharges")) || [] ;
+    const recharges = JSON.parse(localStorage.getItem("recharges")) || [];
     console.log(recharges)
 
-    recharges.push(recharge) ;
+    recharges.push(recharge);
 
-    localStorage.setItem("recharges",JSON.stringify(recharges))
+    localStorage.setItem("recharges", JSON.stringify(recharges))
+
+    let users = JSON.parse(localStorage.getItem("users"))
+
+    let user = users[0]
+
+    let solde = Number(user.comptePrincipal.soldePrincipal) - Number(mntantPrsnl)
+    console.log(solde)
+    console.log(user.comptePrincipal.soldePrincipal)
+    console.log(mntantPrsnl)
+
+    user.comptePrincipal.soldePrincipal = solde
+    console.log(user.comptePrincipal.soldePrincipal);
+    console.log(user);
+
+    localStorage.setItem("users", JSON.stringify(users))
+
+    const soldCntnt = document.getElementById("solde");
+    // let arr = JSON.parse(localStorage.getItem("users")) || []
+    // console.log()
+    soldCntnt.textContent = solde
 
 
 
 })
+
+// let users = JSON.parse(localStorage.getItem("users"))
+
+// let mntantPrsnl = document.getElementById("mntantPrsnl")
+// mntantPrsnl.addEventListener("input", () => {
+
+//     // console.log(mntantPrsnl)
+//     if (users.length > 0) {
+//         let user = users[0]
+//         let rchrg = mntantPrsnl.value
+//         let solde = +(user.comptePrincipal.soldePrincipal) - +(rchrg)
+//         console.log(solde)
+
+//         user.comptePrincipal.soldePrincipal = solde
+
+//         localStorage.setItem("users", JSON.stringify(users))
+
+//     }
+// })
+
+
+
+
+
+
 
 // let operation = document.getElementById("operation")
 // let numeroTel = document.getElementById("numeroTel");

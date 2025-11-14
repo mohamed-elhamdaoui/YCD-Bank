@@ -66,7 +66,7 @@
                         </li>
                         <li>
                             <a href="facture.html"
-                                class="flex items-center bg-gray-200 gap-3 p-2 rounded-lg text-gray-900 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">
+                                class="flex items-center text-white bg-black gap-3 p-2 rounded-lg text-gray-900 dark:text-gray-200 ">
                                 <i class='bx bx-receipt text-xl'></i>
                                 <span>Factures</span>
                             </a>
@@ -128,16 +128,16 @@
                         <h1 class="text-3xl font-medium">Nouvelle Facture</h1>
                         <div class="flex flex-col gap-4 mt-7">
                             <span class="text-xl font-semibold">Référence de la facture</span>
-                            <input class="bg-gray-100 p-4 rounded-xl" placeholder="ABC123456" type="text" name="" id="">
+                            <input id="factureRef" class="bg-gray-100 p-4 rounded-xl" placeholder="ABC123456" type="text" name="" >
                             <p class="text-sm ">Format: 6-20 caractères alphanumériques en majuscules</p>
                             <span class="text-xl font-semibold">Montant (MAD)</span>
-                            <input class="bg-gray-100 p-4 rounded-xl" placeholder="0.00" type="text" name="" id="">
+                            <input  class="bg-gray-100 p-4 rounded-xl" placeholder="0.00" type="text" name="" id="montantFact">
 
                             <div class="flex justify-between p-5 border border-black rounded-2xl">
                                 <span class="text-gray-500 font-semibold text-base">Solde disponible:</span>
-                                <span>15420.50 MAD</span>
+                                <span> <span id="solde"></span> MAD</span>
                             </div>
-                            <button class="bg-[#030212] text-white rounded-lg py-3 text-xl">Payer la facture</button>
+                            <button id="savePay" class="bg-[#030212] text-white rounded-lg py-3 text-xl">Payer la facture</button>
                         </div>
                     </div>
                 </section>
@@ -193,6 +193,7 @@
             }
         })
     </script>
+    <script src="/assets/js/facture.js"></script>
 </body>
 
 </html>
