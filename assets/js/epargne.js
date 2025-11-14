@@ -134,3 +134,6 @@ document.getElementById('formulaire').reset();
 
             doc.save('RIB_Compte_Epargne.pdf');
         });
+        
+        //affichage correct du rib et du numero de compte
+        let RibEpargne= document.getElementById('ribEpargne');

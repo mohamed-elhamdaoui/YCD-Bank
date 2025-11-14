@@ -6,105 +6,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <title>Compte epargne</title>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+    <title>SideBar</title>
 </head>
 
-<body>
+<body class="bg-white text-black dark:bg-gray-900 dark:text-white">
 
-    <main>
-        <button id="menu-sidebare" class="sm:hidden p-3 text-2xl">
+    <div class="">
+
+        <button id="toggle-dark" class="fixed top-3 right-3 p-3 text-2xl z-50">
+            <i class='bx bx-moon'></i>
+        </button>
+
+        <button id="menu-sidebare" class="sm:hidden fixed top-3 left-3 p-3 text-2xl z-50">
             <i class='bx bx-menu'></i>
         </button>
-        <aside id="sidebar"
-            class="fixed top-0 left-0 z-40 w-64 h-screen transform -translate-x-full sm:translate-x-0 transition-transform duration-300 border-r border-gray-400 bg-gray-50 dark:bg-gray-800">
-            <button id="masqueMenu" class="absolute top-3 right-3 text-2xl sm:hidden ">
-                <i class='bx bx-x'></i>
-            </button>
-            <img src="/assets/img/ycd-logo.png" alt="logo YCD Bank" class="w-24 ml-14 mb-5">
-            <nav class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800 border-t border-gray-400">
-                <ul id="liensSideBare" class="space-y-2 font-medium">
 
-                    <li>
-                        <a href="#"
-                            class="flex items-center gap-3 p-2 text-gray-900 rounded-lg hover:bg-gray-200 active:bg-black active:text-white">
-                            <i class='bx bx-home text-xl'></i>
-                            <span>Tableau de board</span>
-                        </a>
-                    </li>
+        <div class="flex h-screen overflow-hidden">
 
-                    <li>
-                        <a href="#"
-                            class="flex items-center gap-3 p-2 text-gray-900 rounded-lg hover:bg-gray-200 active:bg-black active:text-white">
-                            <i class='bx bx-group text-xl'></i>
-                            <span>Bénéficiaires</span>
-                        </a>
-                    </li>
+            <aside id="sidebar"
+                class="fixed sm:relative top-0 left-0 z-40 w-64 h-screen transform -translate-x-full sm:translate-x-0 transition-transform duration-300 border-r border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 dark:text-white">
 
-                    <li>
-                        <a href="#"
-                            class="flex items-center gap-3 p-2 text-gray-900 rounded-lg hover:bg-gray-200 active:bg-black active:text-white">
-                            <i class='bx bx-send text-xl'></i>
-                            <span>Virements</span>
-                        </a>
-                    </li>
+                <button id="masqueMenu" class="absolute top-3 right-3 text-2xl sm:hidden">
+                    <i class='bx bx-x'></i>
+                </button>
 
-                    <li>
-                        <a href="#"
-                            class="flex items-center gap-3 p-2 text-gray-900 rounded-lg hover:bg-gray-200 active:bg-black active:text-white">
-                            <i class='bx bx-receipt text-xl'></i>
-                            <span>Factures</span>
-                        </a>
-                    </li>
+                <div class="flex flex-col items-center ">
+                    <img src="../assets/img/logo.png" alt="logo" class="w-24 mb-5 dark:invert dark:brightness-0">
+                </div>
 
-                    <li>
-                        <a href="#"
-                            class="flex items-center gap-3 p-2 text-gray-900 rounded-lg hover:bg-gray-200 active:bg-black active:text-white">
-                            <i class='bx bx-mobile text-xl'></i>
-                            <span>Recharges</span>
-                        </a>
-                    </li>
+                <nav
+                    class="h-full px-3 py-1 overflow-y-auto border-t border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
 
-                    <li>
-                        <a href="#"
-                            class="flex items-center gap-3 p-2 text-gray-900 rounded-lg hover:bg-gray-200 active:bg-black active:text-white">
-                            <i class='bx bx-credit-card text-xl'></i>
-                            <span>Ma Carte</span>
-                        </a>
-                    </li>
+                    <ul id="liensSideBare" class="space-y-2 font-medium">
+                        <li>
+                            <a href="tableau_de_board.html"
+                                class="flex items-center gap-3 p-2 rounded-lg text-gray-900 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 active:bg-black active:text-white">
+                                <i class='bx bx-home text-xl'></i>
+                                <span>Tableau de bord</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="flex items-center gap-3 p-2 rounded-lg text-gray-900 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">
+                                <i class='bx bx-group text-xl'></i>
+                                <span>Bénéficiaires</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="flex items-center gap-3 p-2 rounded-lg text-gray-900 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">
+                                <i class='bx bx-send text-xl'></i>
+                                <span>Virements</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="facture.html"
+                                class="flex items-center gap-3 p-2 rounded-lg text-gray-900 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">
+                                <i class='bx bx-receipt text-xl'></i>
+                                <span>Factures</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="flex items-center gap-3 p-2 rounded-lg text-gray-900 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">
+                                <i class='bx bx-mobile text-xl'></i>
+                                <span>Recharges</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="flex items-center gap-3 p-2 rounded-lg text-gray-900 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">
+                                <i class='bx bx-credit-card text-xl'></i>
+                                <span>Ma Carte</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="flex items-center gap-3 p-2 rounded-lg text-gray-900 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">
+                                <i class='bx bx-coin-stack text-xl'></i>
+                                <span>Compte Épargne</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="flex items-center gap-3 p-2 rounded-lg text-gray-900 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">
+                                <i class='bx bx-time text-xl'></i>
+                                <span>Historique</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="flex items-center gap-3 p-2 rounded-lg text-gray-900 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">
+                                <i class='bx bx-dollar text-xl'></i>
+                                <span>Devises</span>
+                            </a>
+                        </li>
+                    </ul>
 
-                    <li>
-                        <a href="#"
-                            class="flex items-center gap-3 p-2 text-gray-900 rounded-lg hover:bg-gray-200 active:bg-black active:text-white">
-                            <i class='bx bx-coin-stack'></i>
-                            <span>Compte Épargne</span>
-                        </a>
-                    </li>
+                    <button id="deconnexion" type="button"
+                        class="mt-3 w-full bg-black dark:bg-gray-700 text-white rounded-lg px-8 py-2 hover:bg-gray-800 dark:hover:bg-gray-600 transition">
+                        <i class='bx bx-log-out'></i> Déconnexion
+                    </button>
 
-                    <li>
-                        <a href="#"
-                            class="flex items-center gap-3 p-2 text-gray-900 rounded-lg hover:bg-gray-200 active:bg-black active:text-white">
-                            <i class='bx bx-time text-xl'></i>
-                            <span>Historique</span>
-                        </a>
-                    </li>
+                </nav>
+            </aside>
 
-                    <li>
-                        <a href="#"
-                            class="flex items-center gap-3 p-2 text-gray-900 rounded-lg hover:bg-gray-200 active:bg-black active:text-white">
-                            <i class='bx bx-dollar text-xl'></i>
-                            <span>Devises</span>
-                        </a>
-                    </li>
-
-                </ul>
-                <button type="button" class="mt-4 bg-black text-white rounded-lg px-8 py-1 "><i
-                        class='bx bx-log-out'></i> Déconnexion</button>
-
-            </nav>
-
-        </aside>
-        <section class="flex-1  sm:ml-64 p-4 sm:p-8">
+            <main class="flex-1 overflow-y-auto p-6 sm:ml-14 ml-10 transition-all duration-300">
+                <section>
             <div class="mb-6">
                 <div class="flex justify-between items-center mb-2">
                     <h1 class="text-2xl  sm:text-3xl font-bold text-gray-800">Compte Épargne</h1>
@@ -238,13 +253,16 @@
 
 
         </section>
+            </main>
+        </div>
+    </div>
 
-    </main>
     <script>
         const sidebar = document.getElementById("sidebar");
         const menuTele = document.getElementById("menu-sidebare");
         const masqueMenu = document.getElementById("masqueMenu");
         const liensSideBare = document.querySelectorAll("#liensSideBare a");
+        const toggleDark = document.getElementById("toggle-dark");
 
         menuTele.addEventListener("click", () => {
             sidebar.classList.toggle("-translate-x-full");
@@ -252,22 +270,44 @@
 
         masqueMenu.addEventListener("click", () => {
             sidebar.classList.add("-translate-x-full");
-        })
+        });
 
         liensSideBare.forEach(element => {
-            element.addEventListener("click",
-                () => {
-                    if (window.innerWidth < 640) {
-                        sidebar.classList.add("-translate-x-full");
-                    }
+            element.addEventListener("click", () => {
+                if (window.innerWidth < 640) {
+                    sidebar.classList.add("-translate-x-full");
                 }
+            });
+        });
+
+        toggleDark.addEventListener("click", () => {
+            document.documentElement.classList.toggle("dark");
+            localStorage.setItem("theme",
+                document.documentElement.classList.contains("dark") ? "dark" : "light"
             );
         });
 
+        if (localStorage.getItem("theme") === "dark") {
+            document.documentElement.classList.add("dark");
+        };
 
 
+
+    </script>
+    <script >
+
+        const deconnexion = document.getElementById("deconnexion") ;
+        deconnexion.addEventListener("click" , ()=> {
+            if(deconnexion) {
+                alert("You have been logout");
+            localStorage.removeItem("currentUser") ;
+            window.location = "/Pages/login.html" ;
+            }
+        })
     </script>
     <script src="../assets/js/epargne.js"></script>
 </body>
 
 </html>
+
+
