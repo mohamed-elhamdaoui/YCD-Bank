@@ -91,13 +91,21 @@ function afficherBeneficiaires() {
         <p class="text-sm text-gray-500 dark:text-black"><b>Banque:</b> ${b.banque}</p>
       </div>
       <div class="flex gap-3">
-        <button class="toggle-bloque text-blue-500 hover:text-blue-700 font-semibold" data-index="${index}">
-          ${b.bloque ? 'Débloquer' : 'Bloquer'}
-        </button>
-        <button class="text-red-500 hover:text-red-700 font-semibold" data-delete="${index}">
-          Supprimer
-        </button>
-      </div>
+    <button 
+        class="toggle-bloque flex items-center gap-1 text-blue-500 hover:text-blue-700 font-semibold"
+        data-index="${index}"
+    >
+        <i class='bx ${b.bloque ? "bx-lock-open" : "bx-lock"} text-lg'></i>
+    </button>
+
+    <button 
+        class="flex items-center gap-1 text-red-500 hover:text-red-700 font-semibold"
+        data-delete="${index}"
+    >
+        <i class='bx bx-trash text-lg'></i>
+    </button>
+</div>
+
     `;
         listeBeneficiaires.appendChild(item);
     });
