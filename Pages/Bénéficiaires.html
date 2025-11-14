@@ -56,7 +56,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#"
+                            <a href="virements.html"
                                 class="flex items-center gap-3 p-2 rounded-lg text-gray-900 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">
                                 <i class='bx bx-send text-xl'></i>
                                 <span>Virements</span>
@@ -114,10 +114,10 @@
                 </nav>
             </aside>
 
-    <main class="flex-1 overflow-y-auto transition-all duration-300 p-4 ml-10">
+    <main class="flex-1 overflow-y-auto transition-all duration-300 py-6 px-4 ml-10 sm:ml-0">
 
       <header class="mb-6">
-        <h1 class="text-2xl font-bold mb-1">Gestion des Bénéficiaires</h1>
+        <h1 class="text-2xl font-bold mb-1">Bénéficiaires</h1>
         <p class="text-gray-600 dark:text-gray-300">Ajoutez et gérez vos bénéficiaires</p>
       </header>
 
@@ -126,9 +126,9 @@
           <p class="font-semibold">Mes Bénéficiaires</p>
           <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center mt-2">
             <input id="searchBeneficiaire" type="text" placeholder="Rechercher par nom..."
-              class="w-full sm:w-80 border rounded-md px-4 py-2 focus:ring focus:ring-blue-200 dark:bg-gray-200 dark:text-black" />
+              class="w-full sm:w-80 border rounded-md px-4 py-2 focus:ring focus:ring-blue-200 dark:bg-gray-600 dark:text-black" />
             <select id="filtreStatut"
-              class="border rounded-md px-3 py-2 focus:ring focus:ring-blue-200 outline-none dark:bg-gray-200 dark:text-black">
+              class="border rounded-md px-3 py-2 focus:ring focus:ring-blue-200 outline-none dark:bg-gray-600 dark:text-black">
               <option value="tous">Tous</option>
               <option value="bloque">Bloqués</option>
               <option value="debloque">Débloqués</option>
@@ -156,7 +156,7 @@
           <form id="formBeneficiaire" class="space-y-3 sm:space-y-4">
             <div>
               <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Nom complet</label>
-              <input name="nom" type="text""
+              <input name="nom" type="text"
                class=" w-full border rounded-md px-3 py-2 text-sm sm:text-base bg-gray-100 dark:bg-gray-700 focus:ring
                 focus:ring-blue-200 outline-none text-black dark:text-white" />
             </div>

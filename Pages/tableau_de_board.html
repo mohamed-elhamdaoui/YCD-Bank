@@ -57,7 +57,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#"
+                            <a href="virements.html"
                                 class="flex items-center gap-3 p-2 rounded-lg text-gray-900 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">
                                 <i class='bx bx-send text-xl'></i>
                                 <span>Virements</span>
@@ -122,10 +122,13 @@
                 </header>
 
                 <section>
-                    <div class="my-3 md:flex md:gap-36 ">
+                    <div class="my-3 grid grid-cols-1 md:grid-cols-2 gap-6">
 
-                        <div
-                            class="bg-gradient-to-br from-blue-600 to-blue-400  dark:from-blue-900 dark:to-blue-700 my-6 rounded-xl w-96 h-52 p-4 text-white dark:bg-blue-900 relative hover:scale-105 hover:shadow-xl cursor-pointer  transition-transform duration-300">
+                        <!-- Carte Compte Principal -->
+                        <div class="bg-gradient-to-br from-blue-600 to-blue-400 dark:from-blue-900 dark:to-blue-700 
+        rounded-xl w-full h-52 p-4 text-white relative 
+        hover:scale-105 hover:shadow-xl cursor-pointer transition-transform duration-300">
+
                             <p class="text-xl font-medium">Compte Principal</p><br>
                             <p id="solde-principal" class="text-xl font-medium solde">***********</p><br>
                             <p class="text-xl font-medium">RIB</p>
@@ -141,9 +144,8 @@
                             </div>
                         </div>
 
+                        <div class="bg-gradient-to-br from-green-600 to-green-400 dark:from-green-900 dark:to-green-700 rounded-xl w-full h-52 p-4 text-white relative hover:scale-105 hover:shadow-xl cursor-pointer transition-transform duration-300">
 
-                        <div
-                            class="bg-gradient-to-br from-green-600 to-green-400 my-6 rounded-lg w-96 h-52 p-4 dark:bg-green-900 text-white relative hover:scale-105 hover:shadow-xl cursor-pointer  transition-transform duration-300">
                             <p class="text-xl font-medium">Compte Épargne</p><br>
                             <p id="solde-epargne" class="text-xl font-normal solde">***********</p><br>
                             <p class="text-xl font-medium">RIB</p>
@@ -153,11 +155,13 @@
                                 <i class="bx bx-low-vision text-2xl"></i>
                             </button>
                         </div>
+
                     </div>
+
 
                     <div
                         class="bg-white dark:bg-gray-800 dark:text-white rounded-lg border border-gray-300 p-4 text-black">
-                    <h2 class="text-xl font-semibold mb-3 dark:text-white">Transactions récentes</h2>
+                        <h2 class="text-xl font-semibold mb-3 dark:text-white">Transactions récentes</h2>
 
                         <ul id="transaction-list" class="space-y-3"></ul>
 
