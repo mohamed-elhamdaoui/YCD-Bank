@@ -36,7 +36,7 @@ Les comptes et sessions ne disparaissent pas après un rafraîchissement
 
 UI moderne grâce à Tailwind CSS
 
-📱 Interface 100% responsive (mobile, tablette, desktop)
+Interface 100% responsive (mobile, tablette, desktop)
 
 #Stack utilisée
 
